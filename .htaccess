@@ -1,0 +1,10 @@
+# Bloquer l'acces au dossier .git via HTTP
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.git(/|$) - [F,L]
+</IfModule>
+
+# Fallback si mod_rewrite indisponible
+<FilesMatch "^\.git">
+    Deny from all
+</FilesMatch>    

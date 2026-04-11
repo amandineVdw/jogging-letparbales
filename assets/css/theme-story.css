@@ -1,0 +1,94 @@
+/* ============================================================
+   THEME-DARK.CSS — Théo Rie
+   ============================================================
+   Ton : Gen X deadpan. Factuel. Légèrement fatigué de tout.
+   Pas de douceur. Monospace assumé. Bords francs.
+   ============================================================ */
+
+:root {
+    --color-bg:          #111111;
+    --color-nav:         #0a0a0a;
+    --color-surface:     #1a1a1a;
+    --color-hover:       #222222;
+    --color-accent:      #e74c3c;
+    --color-accent-dark: #c0392b;
+    --color-text:        #e2e2e2;
+    --color-muted:       #555555;
+    --color-muted2:     #7f8caf;
+    --color-border:      #2a2a2a;
+    --color-btn:         #e74c3c;
+    --color-btn-hover:   #c0392b;
+    --font-body:         'Courier New', Courier, monospace;
+    --radius-sm:         0px;
+    --radius-md:         0px;
+    --radius-lg:         0px;
+    --radius-pill:       0px;
+    --shadow-md:         0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* H1 : barre rouge à gauche, uppercase, tranchant */
+h1 {
+    font-size: var(--text-2xl);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: none;
+    border-left: 3px solid var(--color-accent);
+    padding: var(--space-2) 0 var(--space-2) var(--space-5);
+    line-height: 1.1;
+}
+
+/* Container : bord accent en haut, aucune rondeur */
+.container {
+    border-top: 2px solid var(--color-accent);
+    margin-top: 0;
+}
+
+/* News : trait rouge à gauche */
+.news-item {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-4);
+}
+
+/* Sous-titre : monospace, commentaire de terminal */
+.sous-titre {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-muted2);
+    font-style: normal;
+    letter-spacing: 0.05em;
+}
+
+/* Lien actif nav : rouge discret */
+#nav a.actif {
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 0;
+}
+
+/* Bouton login */
+.btn-login {
+    border-radius: 0;
+    font-family: var(--font-mono);
+}
+
+/* Filtres : carrés, monospace */
+.btn-filtre {
+    border-radius: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Podium adapté fond sombre */
+tbody tr.pos-1 td { color: var(--color-gold);   background: rgba(217,119,6,0.08); }
+tbody tr.pos-2 td { color: var(--color-silver); background: transparent; }
+tbody tr.pos-3 td { color: var(--color-bronze); background: transparent; }
+
+/* Footer : monospace, discret */
+.site-footer {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+}

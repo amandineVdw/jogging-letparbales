@@ -1,0 +1,503 @@
+/* ============================================================
+   LOGIN.CSS — Page de connexion
+   ============================================================
+   Standalone : pas de tokens.css ici.
+   Architecture : variables CSS overridées par thème.
+   body.theme-dark et body.theme-rocky redéfinissent
+   les variables — main.css n'a rien à surcharger.
+   3 blocs propres au lieu de 15 overrides éparpillés.
+   ============================================================ */
+
+
+/* ── TOKENS LOGIN ───────────────────────────────────────────── */
+
+:root {
+    --login-bg:          #eef0f3;
+    --login-bg-texture:  linear-gradient(rgba(30,42,56,0.03) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(30,42,56,0.03) 1px, transparent 1px);
+    --login-texture-size: 32px 32px;
+    --login-card-bg:     #ffffff;
+    --login-card-border: #c8d0d8;
+    --login-body-bg:     #ffffff;
+    --login-input-bg:    #f8f9fa;
+    --login-input-bd:    #ced4da;
+    --login-input-color: #212529;
+    --login-input-r:     2px;
+    --login-input-font:  inherit;
+    --login-input-focus: rgba(30,42,56,0.1);
+    --login-input-focus-bd: #1e2a38;
+    --login-label-color: #6c757d;
+    --login-label-font:  inherit;
+    --login-btn-bg:      #1e2a38;
+    --login-btn-color:   #ffffff;
+    --login-btn-r:       2px;
+    --login-btn-font:    inherit;
+    --login-sep-color:   #adb5bd;
+    --login-carte-r:     4px;
+    --login-carte-hover: #f8f9fa;
+    --login-carte-bd:    #dee2e6;
+    --login-av-r:        50%;
+    --login-av-font:     inherit;
+    --login-nom-color:   #212529;
+    --login-nom-font:    inherit;
+    --login-desc-color:  #6c757d;
+    --login-desc-style:  italic;
+    --login-desc-font:   inherit;
+    --login-badge-r:     2px;
+    --login-foot-bg:     #f8f9fa;
+    --login-foot-bd:     #e9ecef;
+    --login-foot-color:  #adb5bd;
+    --login-label-txt:   #6c757d;
+}
+
+body.theme-dark {
+    --login-bg:          #050505;
+    --login-bg-texture:  repeating-linear-gradient(
+                           0deg, transparent, transparent 2px,
+                           rgba(255,255,255,0.012) 2px, rgba(255,255,255,0.012) 3px
+                         );
+    --login-texture-size: auto;
+    --login-card-bg:     #0a0a0a;
+    --login-card-border: #1a1a1a;
+    --login-body-bg:     #0a0a0a;
+    --login-input-bg:    #0a0a0a;
+    --login-input-bd:    #1a1a1a;
+    --login-input-color: #aaaaaa;
+    --login-input-r:     0px;
+    --login-input-font:  'Courier New', monospace;
+    --login-input-focus: rgba(231,76,60,0.15);
+    --login-input-focus-bd: #e74c3c;
+    --login-label-color: #333333;
+    --login-label-font:  'Courier New', monospace;
+    --login-btn-bg:      #e74c3c;
+    --login-btn-color:   #ffffff;
+    --login-btn-r:       0px;
+    --login-btn-font:    'Courier New', monospace;
+    --login-sep-color:   #222222;
+    --login-carte-r:     0px;
+    --login-carte-hover: #0f0f0f;
+    --login-carte-bd:    #e74c3c;
+    --login-av-r:        0px;
+    --login-av-font:     'Courier New', monospace;
+    --login-nom-color:   #888888;
+    --login-nom-font:    'Courier New', monospace;
+    --login-desc-color:  #333333;
+    --login-desc-style:  normal;
+    --login-desc-font:   'Courier New', monospace;
+    --login-badge-r:     0px;
+    --login-foot-bg:     #000000;
+    --login-foot-bd:     #111111;
+    --login-foot-color:  #1a1a1a;
+    --login-label-txt:   #333333;
+}
+
+body.theme-rocky {
+    --login-bg:          #080808;
+    --login-bg-texture:  repeating-linear-gradient(
+                           -60deg, transparent, transparent 18px,
+                           rgba(245,196,0,0.025) 18px, rgba(245,196,0,0.025) 19px
+                         );
+    --login-texture-size: auto;
+    --login-card-bg:     #111111;
+    --login-card-border: #111111;
+    --login-body-bg:     #111111;
+    --login-input-bg:    #0d0d0d;
+    --login-input-bd:    #2a2a2a;
+    --login-input-color: #e0e0e0;
+    --login-input-r:     0px;
+    --login-input-font:  inherit;
+    --login-input-focus: rgba(245,196,0,0.15);
+    --login-input-focus-bd: #f5c400;
+    --login-label-color: #444444;
+    --login-label-font:  'Arial Black', Arial, sans-serif;
+    --login-btn-bg:      #f5c400;
+    --login-btn-color:   #000000;
+    --login-btn-r:       0px;
+    --login-btn-font:    'Arial Black', Arial, sans-serif;
+    --login-sep-color:   #333333;
+    --login-carte-r:     0px;
+    --login-carte-hover: #0f0f0f;
+    --login-carte-bd:    #f5c400;
+    --login-av-r:        2px;
+    --login-av-font:     'Arial Black', Arial, sans-serif;
+    --login-nom-color:   #e0e0e0;
+    --login-nom-font:    'Arial Black', Arial, sans-serif;
+    --login-desc-color:  #444444;
+    --login-desc-style:  normal;
+    --login-desc-font:   inherit;
+    --login-badge-r:     0px;
+    --login-foot-bg:     #0d0d0d;
+    --login-foot-bd:     #1a1a1a;
+    --login-foot-color:  #222222;
+    --login-label-txt:   #444444;
+}
+
+
+/* ── LAYOUT ─────────────────────────────────────────────────── */
+
+body {
+    font-family: system-ui, -apple-system, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background: var(--login-bg);
+    background-image: var(--login-bg-texture);
+    background-size: var(--login-texture-size);
+    transition: background 0.4s;
+}
+
+.site-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--login-label-txt);
+    margin-bottom: 0.5rem;
+}
+
+.retour-accueil {
+    display: block;
+    font-size: 11px;
+    color: var(--login-label-txt);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+}
+
+.retour-accueil:hover {
+    opacity: 1;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    border: 1px solid var(--login-card-border);
+    background: var(--login-card-bg);
+    border-radius: 2px;
+}
+
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+
+.login-head {
+    padding: 2rem 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Officiel */
+.officiel-logo-row { display: flex; align-items: center; gap: 16px; }
+.logo-lpb          { width: 60px; height: 60px; flex-shrink: 0; }
+
+.officiel-title {
+    font-size: 22px;
+    font-weight: 700;
+    font-family: Georgia, serif;
+    line-height: 1.1;
+}
+
+.officiel-title em { color: #e74c3c; font-style: normal; }
+
+.officiel-sub {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.officiel-accent-bar { height: 3px; background: #e74c3c; }
+
+/* Story */
+.story-prompt {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #e74c3c;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.story-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.story-title span { color: #e74c3c; }
+
+body.theme-story .login-head { border-left: 3px solid #e74c3c; }
+
+.story-sub {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    margin-top: 10px;
+    letter-spacing: 0.02em;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px; height: 32px;
+    background: #e74c3c;
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* Rocky */
+.rocky-stripe {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; width: 12px;
+    background: repeating-linear-gradient(-45deg,#000 0,#000 5px,#f5c400 5px,#f5c400 10px);
+}
+
+.rocky-eyebrow {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.rocky-title {
+    font-size: 38px;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+}
+
+.rocky-sub {
+    font-size: 10px;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-top: 10px;
+}
+
+.rocky-ticker {
+    background: #000;
+    color: #f5c400;
+    font-size: 9px;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 6px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.rocky-ticker span {
+    display: inline-block;
+    animation: ticker 16s linear infinite;
+}
+
+@keyframes ticker { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
+
+
+/* ── FORMULAIRE ─────────────────────────────────────────────── */
+
+.login-body { padding: 1.5rem 2rem; background: var(--login-body-bg); }
+
+label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--login-label-color);
+    font-family: var(--login-label-font);
+    margin-bottom: 6px;
+    margin-top: 1rem;
+}
+
+label:first-of-type { margin-top: 0; }
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 10px 13px;
+    font-size: 14px;
+    border: 1px solid var(--login-input-bd);
+    border-radius: var(--login-input-r);
+    background: var(--login-input-bg);
+    color: var(--login-input-color);
+    font-family: var(--login-input-font);
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus {
+    border-color: var(--login-input-focus-bd);
+    box-shadow: 0 0 0 3px var(--login-input-focus);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    margin-top: 1.25rem;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: var(--login-btn-r);
+    cursor: pointer;
+    background: var(--login-btn-bg);
+    color: var(--login-btn-color);
+    font-family: var(--login-btn-font);
+    transition: opacity 0.15s, transform 0.15s;
+}
+
+.btn-login:hover  { opacity: 0.88; transform: translateY(-1px); }
+.btn-login:active { transform: translateY(0); }
+
+.erreur {
+    margin-top: 1rem;
+    padding: 10px 13px;
+    font-size: 13px;
+    border-left: 3px solid #e74c3c;
+    background: #fdf2f2;
+    color: #e74c3c;
+    border-radius: 0;
+}
+
+body.theme-dark  .erreur { background: #1a0a0a; }
+body.theme-rocky .erreur { background: #1a0000; }
+
+
+/* ── CARTES ─────────────────────────────────────────────────── */
+
+.cartes-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--login-sep-color);
+    font-family: var(--login-label-font);
+    margin: 1.25rem 0 0.75rem;
+    text-align: center;
+}
+
+.carte {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 11px;
+    width: 100%;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+    border-radius: var(--login-carte-r);
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: background 0.12s, border-color 0.12s, transform 0.12s;
+}
+
+.carte:last-child  { margin-bottom: 0; }
+.carte:hover       { background: var(--login-carte-hover); border-color: var(--login-carte-bd); transform: translateX(4px); }
+
+/* Olaf — discret. Il sait pourquoi. */
+.carte-olaf        { opacity: 0.4; }
+.carte-olaf:hover  { opacity: 1; }
+
+.av {
+    width: 36px; height: 36px;
+    border-radius: var(--login-av-r);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+    font-family: var(--login-av-font);
+    overflow: hidden;
+}
+
+.av img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 50%;
+}
+
+.carte-info { flex: 1; min-width: 0; }
+
+.carte-nom {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--login-nom-color);
+    font-family: var(--login-nom-font);
+    line-height: 1.2;
+}
+
+.carte-desc {
+    font-size: 11px;
+    color: var(--login-desc-color);
+    font-family: var(--login-desc-font);
+    font-style: var(--login-desc-style);
+    margin-top: 1px;
+}
+
+.carte-creds { text-align: right; flex-shrink: 0; }
+
+.cred      { font-size: 10px; font-family: 'Courier New', monospace; color: var(--login-label-txt); }
+.cred-pw   { opacity: 0.35; }
+
+/* Badges rôle */
+.badge {
+    font-size: 8px;
+    padding: 1px 5px;
+    font-weight: 700;
+    margin-left: 4px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: var(--login-badge-r);
+}
+
+.badge-admin        { background: #d4edda; color: #155724; }
+.badge-organisateur { background: #cce5ff; color: #004085; }
+.badge-participant  { background: #fff3cd; color: #856404; }
+
+body.theme-dark .badge-admin        { background: #0a1a0a; color: #2a6a2a; }
+body.theme-dark .badge-organisateur { background: #0a0f1a; color: #1a3a6a; }
+body.theme-dark .badge-participant  { background: #1a1400; color: #4a3a00; }
+
+body.theme-rocky .badge-admin        { background: #0a1a0a; color: #4aaa4a; }
+body.theme-rocky .badge-organisateur { background: #0a0f1a; color: #4a8aff; }
+body.theme-rocky .badge-participant  { background: #1a1000; color: #8a6000; }
+
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+
+.login-footer {
+    text-align: center;
+    font-size: 10px;
+    padding: 0.75rem 2rem 1rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--login-foot-color);
+    background: var(--login-foot-bg);
+    border-top: 1px solid var(--login-foot-bd);
+}
+
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+    body           { padding: 1rem 0.75rem; justify-content: flex-start; padding-top: 2rem; }
+    .login-head    { padding: 1.5rem 1.5rem 1.25rem; }
+    .login-body    { padding: 1.25rem 1.5rem; }
+    .carte-creds   { display: none; }
+    .rocky-title   { font-size: 30px; }
+    .dark-title    { font-size: 28px; }
+}

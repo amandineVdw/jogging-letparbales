@@ -1,0 +1,121 @@
+/* ============================================================
+   TOKENS.CSS — Source de vérité design
+   ============================================================
+   CONCEPT : Design Tokens
+   Un token = une décision de design nommée et centralisée.
+   Changer une valeur ici la propage partout automatiquement.
+
+   ARCHITECTURE :
+   tokens.css      → valeurs par défaut (thème officiel)
+   theme-*.css     → override des tokens uniquement
+   base.css        → utilise var() exclusivement
+
+   SECTIONS :
+   1. Couleurs
+   2. Typographie
+   3. Espacement
+   4. Layout
+   5. Effets
+   6. Transitions
+   ============================================================ */
+
+
+/* ── 1. COULEURS ─────────────────────────────────────────── */
+/* Nommées par usage, pas par couleur                         */
+/* → --color-accent, pas --color-red                         */
+
+:root {
+    --color-bg:          #f0f2f5;
+    --color-nav:         #1e2a38;
+    --color-surface:     #ffffff;
+    --color-hover:       #f7f8fa;
+    --color-accent:      #e74c3c;
+    --color-accent-dark: #c0392b;
+    --color-text:        #1a1a2e;
+    --color-muted:       #6b7280;
+    --color-muted2:     #7f8caf;
+    --color-border:      #e5e7eb;
+    --color-btn:         #1e2a38;
+    --color-btn-hover:   #2c3e50;
+    --color-success:     #16a34a;
+    --color-error:       #dc2626;
+    --color-success-bg:  #f0fdf4;
+    --color-error-bg:    #fef2f2;
+
+    /* Podium — figés, valables tous thèmes */
+    --color-gold:   #d97706;
+    --color-silver: #6b7280;
+    --color-bronze: #b45309;
+}
+
+
+/* ── 2. TYPOGRAPHIE ──────────────────────────────────────── */
+/* Échelle modulaire ratio 1.25 (Major Third)                */
+/* clamp(min, preferred, max) = taille fluide sans breakpoint */
+
+:root {
+    --font-body:  system-ui, -apple-system, Arial, sans-serif;
+    --font-mono:  'Courier New', Courier, monospace;
+    --font-serif: Georgia, 'Times New Roman', serif;
+
+    --text-xs:   0.75rem;
+    --text-sm:   0.875rem;
+    --text-base: 1rem;
+    --text-lg:   clamp(1.1rem, 1.5vw, 1.25rem);
+    --text-xl:   clamp(1.25rem, 2vw, 1.5rem);
+    --text-2xl:  clamp(1.5rem, 3vw, 2rem);
+
+    --leading-tight:  1.2;
+    --leading-normal: 1.6;
+    --leading-loose:  1.8;
+
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-bold:   700;
+}
+
+
+/* ── 3. ESPACEMENT — base 4px ────────────────────────────── */
+
+:root {
+    --space-1:  0.25rem;  /*  4px */
+    --space-2:  0.5rem;   /*  8px */
+    --space-3:  0.75rem;  /* 12px */
+    --space-4:  1rem;     /* 16px */
+    --space-5:  1.25rem;  /* 20px */
+    --space-6:  1.5rem;   /* 24px */
+    --space-8:  2rem;     /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+}
+
+
+/* ── 4. LAYOUT ───────────────────────────────────────────── */
+
+:root {
+    --nav-height:      52px;
+    --container-max:   900px;
+    --container-px:    clamp(1.25rem, 5vw, 3rem);
+    --container-py:    clamp(1.5rem, 4vw, 2.5rem);
+    --radius-sm:       4px;
+    --radius-md:       8px;
+    --radius-lg:       12px;
+    --radius-pill:     999px;
+}
+
+
+/* ── 5. EFFETS ───────────────────────────────────────────── */
+
+:root {
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+    --focus-ring: 0 0 0 3px rgba(231,76,60,0.25);
+}
+
+
+/* ── 6. TRANSITIONS ──────────────────────────────────────── */
+
+:root {
+    --ease-fast:   150ms ease;
+    --ease-normal: 220ms ease;
+}

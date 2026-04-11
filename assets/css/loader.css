@@ -1,0 +1,108 @@
+/* ============================================================
+   LOADER.CSS — Loader animé par thème
+   ============================================================
+   Overlay plein écran affiché au chargement de page.
+   Masqué par JS (classe .hidden) dès que le DOM est prêt.
+   Les couleurs sont injectées inline par PHP (loader.php).
+   ============================================================ */
+
+/* ── OVERLAY ─────────────────────────────────────────────── */
+
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.loader-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* ── SCÈNE ───────────────────────────────────────────────── */
+
+.loader-stage {
+    width: 320px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-track {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+.loader-pole {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 3px;
+    height: 40px;
+}
+
+.loader-flag {
+    position: absolute;
+    bottom: 57px;
+    right: 21px;
+    width: 18px;
+    height: 12px;
+}
+
+/* animation-duration injectée inline par PHP selon le thème */
+.loader-runner {
+    position: absolute;
+    bottom: 20px;
+    animation: loaderRun linear infinite;
+}
+
+@keyframes loaderRun {
+    0%   { left: -60px; }
+    100% { left: 360px; }
+}
+
+
+/* ── DOTS ────────────────────────────────────────────────── */
+
+.loader-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.loader-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: loaderPulse 1s ease-in-out infinite;
+}
+
+.loader-dots span:nth-child(2) { animation-delay: 0.18s; }
+.loader-dots span:nth-child(3) { animation-delay: 0.36s; }
+
+@keyframes loaderPulse {
+    0%, 100% { opacity: 0.2; }
+    50%       { opacity: 0.9; }
+}
+
+
+/* ── LABEL ───────────────────────────────────────────────── */
+
+.loader-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    /* font-family et color injectés inline par PHP */
+}

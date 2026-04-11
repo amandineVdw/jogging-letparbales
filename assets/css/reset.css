@@ -1,0 +1,85 @@
+/* ============================================================
+   RESET.CSS — Remise à zéro des styles par défaut du navigateur
+   ============================================================
+   Chaque navigateur applique ses propres marges, paddings et
+   styles par défaut sur les éléments HTML. Ce fichier les
+   neutralise pour avoir une base identique partout
+   (Chrome, Firefox, Edge, Safari...).
+
+   À inclure EN PREMIER, avant tout autre CSS.
+   ============================================================ */
+
+
+/* --- Suppression des marges et paddings par défaut --- */
+/* Le sélecteur * cible TOUS les éléments HTML de la page */
+* {
+    margin: 0;
+    padding: 0;
+
+    /* box-sizing: border-box = le padding et la bordure sont
+       inclus dans la largeur/hauteur déclarée.
+       Ex : un div de 200px avec padding:20px fait bien 200px,
+       et non 240px (comportement par défaut). */
+    box-sizing: border-box;
+}
+
+/* --- Typographie de base --- */
+/* font-size: 100% respecte le réglage de taille de l'utilisateur
+   dans son navigateur (accessibilité). */
+html {
+    font-size: 100%;
+    /* Empêche le zoom automatique sur les champs de formulaire
+       sur iOS (mobile Safari) */
+    -webkit-text-size-adjust: 100%;
+}
+
+/* line-height: 1.5 améliore la lisibilité du texte */
+body {
+    line-height: 1.5;
+}
+
+/* --- Liens --- */
+/* Par défaut, les liens sont soulignés et bleus.
+   On remet à "inherit" pour contrôler le style dans chaque contexte. */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Listes --- */
+/* Supprime les puces (ul) et numéros (ol) par défaut */
+ul, ol {
+    list-style: none;
+}
+
+/* --- Images --- */
+/* display: block évite l'espace blanc sous les images (inline par défaut).
+   max-width: 100% rend les images responsives automatiquement. */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* --- Formulaires --- */
+/* Les champs héritent de la police du body (par défaut ils ont
+   leur propre police système — souvent différente). */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* --- Boutons --- */
+/* Supprime les styles navigateur sur les boutons */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- Tableaux --- */
+/* border-collapse: collapse = les bordures adjacentes fusionnent
+   en une seule (évite le double-bord entre les cellules).
+   border-spacing: 0 supprime l'espace entre les cellules. */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

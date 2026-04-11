@@ -1,0 +1,22 @@
+# Credentials - ne jamais commit ce fichier
+config/bdd.php
+config/users.php
+
+# Dépendances et caches
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Claude Code
+.claude/
+CLAUDE.md
+doc/claude-code-setup.md
+
+# Editeurs
+.idea/
+.vscode/
+
+# Docs
+doc/

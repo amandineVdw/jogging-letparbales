@@ -1,0 +1,144 @@
+/* ============================================================
+   THEME-ROCKY.CSS — Gilles Letparballes
+   ============================================================
+   Ton : coaching brutal, paracommando du dimanche.
+   Là où dark observe avec fatigue, Rocky challenge
+   avec conviction. Il croit en toi. C'est ça le pire.
+
+   Palette : noir / jaune — danger, urgence, énergie.
+   Typographie : condensed bold uppercase, impact maximal.
+   ============================================================ */
+
+:root {
+    --color-bg:          #0d0d0d;
+    --color-nav:         #111111;
+    --color-surface:     #141414;
+    --color-hover:       #1a1a1a;
+    --color-accent:      #f5c400;
+    --color-accent-dark: #d4a900;
+    --color-text:        #f0f0f0;
+    --color-muted:       #555555;
+    --color-border:      #252525;
+    --color-btn:         #f5c400;
+    --color-btn-hover:   #d4a900;
+    --font-body:         'Arial Black', Arial, sans-serif;
+    --leading-normal:    1.65;
+    --radius-sm:         0px;
+    --radius-md:         2px;
+    --radius-lg:         2px;
+    --radius-pill:       2px;
+    --shadow-md:         0 4px 24px rgba(0,0,0,0.7);
+}
+
+/* H1 : massif, uppercase, barre jaune à gauche */
+h1 {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    border-bottom: none;
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-2) 0 var(--space-2) var(--space-5);
+    line-height: 1.1;
+}
+
+/* Container : bord jaune en haut */
+.container {
+    border-top: 3px solid var(--color-accent);
+    margin-top: 0;
+    border-radius: 0;
+}
+
+/* Sous-titre : uppercase, espacé, discret */
+.sous-titre {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-style: normal;
+    color: var(--color-muted);
+}
+
+/* News : trait jaune à gauche */
+.news-item {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-5);
+}
+
+/* Lien actif nav : souligné jaune, pas de fond */
+#nav a.actif {
+    background: transparent;
+    color: var(--color-accent);
+    box-shadow: inset 0 -2px 0 var(--color-accent);
+    font-weight: 900;
+    border-radius: 0;
+}
+
+#nav a:hover {
+    color: var(--color-accent);
+    background: rgba(245,196,0,0.06);
+}
+
+/* Bouton CTA : texte noir sur jaune — contraste maximal */
+.btn-login,
+input[type=submit] {
+    color: #000;
+    border-radius: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.btn-login:hover,
+input[type=submit]:hover {
+    background: var(--color-accent-dark);
+    color: #000;
+}
+
+/* Filtres : carrés, uppercase, jaune actif */
+.btn-filtre {
+    border-radius: 0;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.btn-filtre.actif {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #000;
+    font-weight: 900;
+}
+
+/* Podium adapté fond sombre */
+tbody tr.pos-1 td { color: var(--color-accent);  background: rgba(245,196,0,0.05); font-weight: 900; }
+tbody tr.pos-2 td { color: var(--color-silver);  background: transparent; }
+tbody tr.pos-3 td { color: #6b5500;              background: transparent; }
+
+/* Badge visiteur/participant : jaune sur dark → ratio > 8:1 ✓ AAA */
+.badge-role {
+    background: rgba(245,196,0,0.12);
+    color: var(--color-accent);
+    border-radius: 0;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Note Olaf : uppercase, discret */
+.note-dernier {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #333;
+}
+
+/* Footer */
+.site-footer {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #2a2a2a;
+    border-top-color: #1a1a1a;
+}
