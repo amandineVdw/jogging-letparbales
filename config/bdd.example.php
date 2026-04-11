@@ -10,7 +10,7 @@ $host_actuel = $_SERVER['HTTP_HOST'] ?? 'localhost';
 if (str_contains($host_actuel, 'free.nf') || str_contains($host_actuel, 'infinityfree')) {
     // === PRODUCTION (InfinityFree) ===
     $host   = 'sql***.infinityfree.com';  // hostname MySQL InfinityFree
-    $dbname = 'if0_XXXXXXX_letparballes2'; // nom de la base de données
+    $dbname = 'if0_XXXXXXX_jogging_letparballes2'; // nom de la base de données
     $user   = 'if0_XXXXXXX';             // username MySQL
     $pass   = 'VOTRE_MOT_DE_PASSE';      // mot de passe MySQL
 } else {

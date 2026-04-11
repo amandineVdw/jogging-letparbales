@@ -1,9 +1,9 @@
 # Jogging LETPARBALLES
 
-Site PHP multi-thème pour le Jogging de l'IFOSUP — Wavre.  
+Site PHP multi-thème pour le Jogging de l'IFOSUP — Wavre.
 Projet scolaire — Cours 5XDEV-1 — IFOSUP Wavre — Examen oral 15 avril 2026.
 
-**Production** → [letparballes.free.nf](https://letparballes.free.nf)
+**Production** → [gillesletparballes.free.nf](https://letparballes.free.nf)
 
 ---
 
@@ -27,11 +27,11 @@ assets/css/      → Tokens → Base → Thèmes
 
 ## Thèmes
 
-| Thème | Utilisateur | Style |
-|-------|-------------|-------|
-| officiel | Bruno Zieuvair | Sobre, institutionnel — navy / rouge |
-| story | Olaf Herme | Chaleureux, auto-dérision — noir / rouge, Courier New |
-| rocky | Gilles Letparballes | Coach ultra engagé — noir / jaune, Arial Black |
+| Thème   | Utilisateur         | Style                                                   |
+| -------- | ------------------- | ------------------------------------------------------- |
+| officiel | Bruno Zieuvair      | Sobre, institutionnel — navy / rouge                   |
+| story    | Olaf Herme          | Chaleureux, auto-dérision — noir / rouge, Courier New |
+| rocky    | Gilles Letparballes | Coach ultra engagé — noir / jaune, Arial Black        |
 
 ## Sécurité
 
