@@ -3,7 +3,7 @@
 Site PHP multi-thème pour le Jogging de l'IFOSUP — Wavre.
 Projet scolaire — Cours 5XDEV-1 — IFOSUP Wavre — Examen oral 15 avril 2026.
 
-**Production** → [gillesletparballes.free.nf](https://letparballes.free.nf)
+**Production** → URL partagée en privé
 
 ---
 

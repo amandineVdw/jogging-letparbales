@@ -1,8 +1,44 @@
 <?php
-// Copier ce fichier en config/users.php et remplir les vrais mots de passe
+// ============================================================
+// CONFIG/USERS.PHP — Cast complet
+// ============================================================
+// SÉCURITÉ : dans .gitignore — ne jamais commiter.
+// En prod : password_hash() + password_verify().
+//
+// RÔLES :
+//   admin        → CRUD complet (articles + classement)
+//   organisateur → classement uniquement (pas les articles)
+//   participant  → lecture seule
+//
+// THÈMES :
+//   officiel → sobre, institutionnel
+//   story    → narratives, Olaf Herme
+//   rocky    → coaching, Gilles Letparballes
+//
+
+// ============================================================
+
 $users = [
-    'prof'     => ['password' => 'CHANGER_MOI',  'theme' => 'officiel', 'role' => 'admin',    'nom' => 'Professeur'],
-    'gilles'   => ['password' => 'CHANGER_MOI',  'theme' => 'rocky',   'role' => 'admin',    'nom' => 'Gilles Letparballes'],
-    'story'     => ['password' => 'CHANGER_MOI',  'theme' => 'story',     'role' => 'admin',    'nom' => 'Olaf Herme'],
-    'visiteur' => ['password' => 'CHANGER_MOI',  'theme' => 'officiel', 'role' => 'visiteur', 'nom' => 'Visiteur'],
+
+    'gilles' => [
+        'password' => password_hash('CHANGER_MOI', PASSWORD_BCRYPT),
+        'theme'    => 'rocky',
+        'role'     => 'admin',
+        'nom'      => 'Gilles Letparballes',
+    ],
+
+    'olaf' => [
+        'password' => password_hash('CHANGER_MOI', PASSWORD_BCRYPT),
+        'theme'    => 'story',
+        'role'     => 'admin',
+        'nom'      => 'Olaf Herme',
+    ],
+
+    'bruno' => [
+        'password' => password_hash('CHANGER_MOI', PASSWORD_BCRYPT),
+        'theme'    => 'officiel',
+        'role'     => 'organisateur',
+        'nom'      => 'Bruno Zieuvair',
+    ],
+
 ];
